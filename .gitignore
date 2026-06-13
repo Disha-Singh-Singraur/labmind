@@ -1,0 +1,14 @@
+# Backend
+labmind-backend/__pycache__/
+labmind-backend/*.pyc
+labmind-backend/.env
+labmind-backend/*.db
+labmind-backend/uploads/
+labmind-backend/venv/
+labmind-backend/scratch/
+
+# Frontend
+labmind/node_modules/
+labmind/.expo/
+labmind/dist/
+labmind/.env
