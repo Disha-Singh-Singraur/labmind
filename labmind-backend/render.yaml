@@ -1,17 +1,30 @@
+databases:
+  - name: labmind-db
+    plan: free
+
 services:
   - type: web
     name: labmind-api
     runtime: python
+    rootDir: labmind-backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: labmind-db
+          property: connectionString
       - key: SECRET_KEY
         generateValue: true
       - key: USE_REAL_AI
-        value: true
+        value: false
       - key: UPLOAD_DIR
         value: ./uploads
-      - key: DATABASE_URL
-        value: sqlite:///./labmind.db
       - key: OPENAI_API_KEY
         sync: false
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 10080
+      - key: ALGORITHM
+        value: HS256
+      - key: MAX_FILE_SIZE_MB
+        value: 10
