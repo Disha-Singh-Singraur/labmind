@@ -23,7 +23,10 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#080C14"
       },
-      "package": "com.labmind.app"
+      "package": "com.labmind.app",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -36,6 +39,11 @@
           "cameraPermission": "LabMind needs camera access to photograph your lab setup for AI verification."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1a4c781a-efaf-4568-8886-7e5613910f8b"
+      }
+    }
   }
 }
